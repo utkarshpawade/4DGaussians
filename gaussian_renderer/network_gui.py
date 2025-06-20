@@ -13,7 +13,13 @@ import torch
 import traceback
 import socket
 import json
-from scene.cameras import MiniCam
+from importlib.machinery import SourceFileLoader
+
+CamerasModule = SourceFileLoader(
+    "cameras",
+    "/content/4DGaussians/scene/cameras.py"
+).load_module()
+
 
 host = "127.0.0.1"
 port = 6009
