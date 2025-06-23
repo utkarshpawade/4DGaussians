@@ -66,7 +66,7 @@ def scene_reconstruction(dataset, opt, hyper, pipe, testing_iterations, saving_i
 
 
     if not viewpoint_stack and not opt.dataloader:
-        # dnerf's branch
+        
         viewpoint_stack = [i for i in train_cams]
         temp_list = copy.deepcopy(viewpoint_stack)
     # 
