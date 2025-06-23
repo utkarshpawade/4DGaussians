@@ -11,7 +11,14 @@
 
 import torch
 import math
-from diff_gaussian_rasterization import GaussianRasterizationSettings, GaussianRasterizer
+from importlib.machinery import SourceFileLoader
+
+DiffGaussianRasterizationModule = SourceFileLoader(
+    "diff_gaussian_rasterization",
+    "/content/4DGaussians/submodules/depth-diff-gaussian-rasterization/diff_gaussian_rasterization/__init__.py"
+).load_module()
+GaussianRasterizationSettings=DiffGaussianRasterizationModule.GaussianRasterizationSettings
+GaussianRasterizer=DiffGaussianRasterizationModule.GaussianRasterizer
 from scene.gaussian_model import GaussianModel
 from utils.sh_utils import eval_sh
 from time import time as get_time
