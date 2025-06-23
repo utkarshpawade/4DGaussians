@@ -36,10 +36,8 @@ def scene_reconstruction(dataset, opt, hyper, pipe, testing_iterations, saving_i
 
     gaussians.training_setup(opt)
     if checkpoint:
-        # breakpoint()
         if stage == "coarse" and stage not in checkpoint:
             print("start from fine stage, skip coarse stage.")
-            # process is in the coarse stage, but start from fine stage
             return
         if stage in checkpoint: 
             (model_params, first_iter) = torch.load(checkpoint)
