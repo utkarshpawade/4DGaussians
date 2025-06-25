@@ -85,7 +85,7 @@ def scene_reconstruction(dataset, opt, hyper, pipe, testing_iterations, saving_i
     
     
     # dynerf, zerostamp_init
-    # breakpoint()
+    
     if stage == "coarse" and opt.zerostamp_init:
         load_in_memory = True
         # batch_size = 4
